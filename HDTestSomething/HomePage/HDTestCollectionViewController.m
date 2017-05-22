@@ -104,6 +104,13 @@ static NSString * HDTestCollectionHeadViewID = @"HDTestCollectionHeadViewID";
                 [self.collection reloadData];
             }
         };
+    }else {
+        cell.panPressStyle = ^(UIPanGestureRecognizer *panPress) {
+            return ;
+        };
+        cell.longPressStyle = ^(UILongPressGestureRecognizer *longPress) {
+            return ;
+        };
     }
     return cell;
 }
@@ -144,6 +151,22 @@ static NSString * HDTestCollectionHeadViewID = @"HDTestCollectionHeadViewID";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     NSLog(@"you had click the collectioncell at indexpath.section = %lu,indexpath.row = %lu",indexPath.section,indexPath.row);
+    if (self.isBeginEidit) {
+        if (indexPath.section == 0) {
+            NSDictionary *dict = [self.imageDatasArray objectAtIndex:indexPath.row];
+            if ([[dict objectForKey:@"state"] isEqualToString:@"-"]) {
+                [self.imageDatasArray removeObject:dict];
+            }
+            [self.collection reloadData];
+        }else {
+            NSDictionary *dict = [self.imageDatasArray objectAtIndex:indexPath.row];
+            if ([[dict objectForKey:@"state"] isEqualToString:@"+"]) {
+                [self.imageDatasArray addObject:dict];
+            }
+            [self.collection reloadData];
+        }
+        
+    }
 }
 
 #pragma mark - getter method
