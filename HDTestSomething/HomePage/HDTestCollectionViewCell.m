@@ -33,9 +33,13 @@
 }
 - (void)setImageName:(NSDictionary *)dict {
     self.imageView.image = [UIImage imageNamed:[dict objectForKey:@"imageName"]];
+    self.stateLabel.hidden = YES;
+    self.backgroundColor = [UIColor whiteColor];
 }
 - (void)setImageStateDict:(NSDictionary *)dict {
     self.imageView.image = [UIImage imageNamed:[dict objectForKey:@"imageName"]];
+     self.stateLabel.hidden = NO;
+    self.backgroundColor = KBackgroundColor;
     NSString *stateStr = [dict objectForKey:@"state"];
     HDTestCollectionCellState state;
     if ([stateStr isEqualToString:@"."]) {

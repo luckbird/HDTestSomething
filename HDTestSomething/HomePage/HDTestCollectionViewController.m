@@ -34,6 +34,14 @@ static NSString * HDTestCollectionHeadViewID = @"HDTestCollectionHeadViewID";
 - (void)startEiditSelectImages {
     self.isBeginEidit = YES;
     NSLog(@"-------开始编辑--------");
+    [self.collection reloadData];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(finshSelectImages)];
+}
+- (void)finshSelectImages {
+    self.isBeginEidit = NO;
+    NSLog(@"-------开始编辑--------");
+    [self.collection reloadData];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(startEiditSelectImages)];
 }
 #pragma mark - collectionViewDelegate dataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -52,6 +60,9 @@ static NSString * HDTestCollectionHeadViewID = @"HDTestCollectionHeadViewID";
     }
     if (indexPath.section == 0) {
         cell.panPressStyle = ^(UIPanGestureRecognizer *panPress) {
+            if (!self.isBeginEidit) {
+                return;
+            }
             HDTestCollectionViewCell *cell = (HDTestCollectionViewCell *)panPress.view;
             NSIndexPath *cellIndexPath = [_collection indexPathForCell:cell];
             [_collection bringSubviewToFront:cell];
