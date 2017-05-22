@@ -11,6 +11,7 @@
 @interface HDTestCollectionViewCell ()
 @property (nonatomic, strong)UIImageView *imageView;
 @property (nonatomic, strong)UILabel *stateLabel;
+
 @end
 
 @implementation HDTestCollectionViewCell
@@ -21,15 +22,30 @@
         self.imageView.frame = self.contentView.frame;
         
         [self.contentView addSubview:self.stateLabel];
-        self.stateLabel.frame = CGRectMake(frame.size.width - 20, 5, 20, 20);
+        self.stateLabel.frame = CGRectMake(self.contentView.frame.size.width - 20, 5, 20, 20);
         
         UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
         [self addGestureRecognizer:longPress];
+        UIPanGestureRecognizer *panPress = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panPress:)];
+        [self addGestureRecognizer:panPress];
     }
     return self;
 }
-- (void)setImageName:(NSString *)imageName {
-    self.imageView.image = [UIImage imageNamed:imageName];
+- (void)setImageName:(NSDictionary *)dict {
+    self.imageView.image = [UIImage imageNamed:[dict objectForKey:@"imageName"]];
+}
+- (void)setImageStateDict:(NSDictionary *)dict {
+    self.imageView.image = [UIImage imageNamed:[dict objectForKey:@"imageName"]];
+    NSString *stateStr = [dict objectForKey:@"state"];
+    HDTestCollectionCellState state;
+    if ([stateStr isEqualToString:@"."]) {
+        state = HDTestCollectionCellStateDefault;
+    }else if ([stateStr isEqualToString:@"+"]) {
+        state = HDTestCollectionCellStateAdd;
+    }else {
+        state = HDTestCollectionCellStateAdded;
+    }
+    [self setLabelState:state];
 }
 - (void)setLabelState:(HDTestCollectionCellState)state {
     switch (state) {
@@ -59,8 +75,13 @@
 }
 #pragma mark - button action method
 - (void)longPress:(UILongPressGestureRecognizer *)longPress{
-    if (self.didClick) {
-        self.didClick(longPress);
+    if (self.longPressStyle) {
+        self.longPressStyle(longPress);
+    }
+}
+- (void)panPress:(UIPanGestureRecognizer *)panPress {
+    if (self.panPressStyle) {
+        self.panPressStyle(panPress);
     }
 }
 #pragma mark - getter method
@@ -68,7 +89,7 @@
     if (!_imageView) {
         _imageView = [UIImageView new];
         _imageView.clipsToBounds = YES;
-        _imageView.backgroundColor = kColorWithRGB(arc4random()%100, arc4random()%100, 0);
+//        _imageView.backgroundColor = kColorWithRGB(arc4random()%100, arc4random()%100, 0);
     }
     return _imageView;
 }

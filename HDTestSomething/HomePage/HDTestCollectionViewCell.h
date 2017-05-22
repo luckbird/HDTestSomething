@@ -14,8 +14,11 @@ typedef NS_ENUM(NSInteger, HDTestCollectionCellState) {
     HDTestCollectionCellStateAdded = 3,//右上角√
     HDTestCollectionCellStateWaitingAdd = 4//待添加，只显示虚线框
 };
-typedef void(^clickCell)(UILongPressGestureRecognizer *longPress) ;
+typedef void(^longPressAction)(UILongPressGestureRecognizer *longPress) ;
+typedef void(^panPressAction)(UIPanGestureRecognizer *panPress);
 @interface HDTestCollectionViewCell : UICollectionViewCell
-@property (nonatomic, copy) clickCell didClick;
-- (void)setImageName:(NSString *)imageName;
+@property (nonatomic, copy) longPressAction longPressStyle;
+@property (nonatomic, copy) panPressAction  panPressStyle;
+- (void)setImageName:(NSDictionary *)dict;
+- (void)setImageStateDict:(NSDictionary *)dict;
 @end

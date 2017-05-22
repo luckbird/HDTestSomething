@@ -17,6 +17,7 @@ static NSString * HDTestCollectionHeadViewID = @"HDTestCollectionHeadViewID";
 @property (nonatomic, strong) NSMutableArray *imageDatasArray;
 @property (nonatomic, assign) CGPoint lastPressPoint;
 @property (nonatomic, strong) NSMutableArray *cellAttributeArray;
+@property (nonatomic, assign) BOOL isBeginEidit;
 @end
 
 @implementation HDTestCollectionViewController
@@ -25,9 +26,15 @@ static NSString * HDTestCollectionHeadViewID = @"HDTestCollectionHeadViewID";
     [super viewDidLoad];
     [self.view addSubview:self.collection];
     self.lastPressPoint = CGPointZero;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(startEiditSelectImages)];
     // Do any additional setup after loading the view.
 }
 
+#pragma mark - button action
+- (void)startEiditSelectImages {
+    self.isBeginEidit = YES;
+    NSLog(@"-------开始编辑--------");
+}
 #pragma mark - collectionViewDelegate dataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 2;
@@ -37,21 +44,26 @@ static NSString * HDTestCollectionHeadViewID = @"HDTestCollectionHeadViewID";
 }
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HDTestCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:HDTestCollectionViewCellID forIndexPath:indexPath];
-    [cell setImageName:[self.imageDatasArray objectAtIndex:indexPath.row]];
+//    [cell setImageName:[self.imageDatasArray objectAtIndex:indexPath.row]];
+    if (self.isBeginEidit) {
+        [cell setImageStateDict:[self.imageDatasArray objectAtIndex:indexPath.row]];
+    }else {
+        [cell setImageName:[self.imageDatasArray objectAtIndex:indexPath.row]];
+    }
     if (indexPath.section == 0) {
-        cell.didClick = ^(UILongPressGestureRecognizer *longPress) {
-            HDTestCollectionViewCell *cell = (HDTestCollectionViewCell *)longPress.view;
+        cell.panPressStyle = ^(UIPanGestureRecognizer *panPress) {
+            HDTestCollectionViewCell *cell = (HDTestCollectionViewCell *)panPress.view;
             NSIndexPath *cellIndexPath = [_collection indexPathForCell:cell];
             [_collection bringSubviewToFront:cell];
             BOOL isChanged = NO;
-            if (longPress.state == UIGestureRecognizerStateBegan) {
+            if (panPress.state == UIGestureRecognizerStateBegan) {
                 [self.cellAttributeArray removeAllObjects];
                 for (int i = 0;i< self.imageDatasArray.count; i++) {
                     [self.cellAttributeArray addObject:[_collection layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0]]];
                 }
-                self.lastPressPoint = [longPress locationInView:_collection];
-            }else if (longPress.state == UIGestureRecognizerStateChanged){
-                cell.center = [longPress locationInView:_collection];
+                self.lastPressPoint = [panPress locationInView:_collection];
+            }else if (panPress.state == UIGestureRecognizerStateChanged){
+                cell.center = [panPress locationInView:_collection];
                 for (UICollectionViewLayoutAttributes *attributes in self.cellAttributeArray) {
                     if (CGRectContainsPoint(attributes.frame, cell.center) && cellIndexPath != attributes.indexPath) {
                         isChanged = YES;
@@ -65,15 +77,22 @@ static NSString * HDTestCollectionHeadViewID = @"HDTestCollectionHeadViewID";
                     }
                 }
                 
-            }else if (longPress.state == UIGestureRecognizerStateEnded) {
+            }else if (panPress.state == UIGestureRecognizerStateEnded) {
                 if (!isChanged) {
                     cell.center = [collectionView layoutAttributesForItemAtIndexPath:cellIndexPath].center;
                 }
                 NSLog(@"排序后---%@",self.imageDatasArray);
             }
-            
         };
-
+        cell.longPressStyle = ^(UILongPressGestureRecognizer *longPress) {
+            if (self.isBeginEidit) {
+                return;
+            }
+            if (longPress.state == UIGestureRecognizerStateBegan) {
+                self.isBeginEidit = YES;
+                [self.collection reloadData];
+            }
+        };
     }
     return cell;
 }
@@ -139,7 +158,7 @@ static NSString * HDTestCollectionHeadViewID = @"HDTestCollectionHeadViewID";
 }
 - (NSMutableArray *)imageDatasArray {
     if (!_imageDatasArray) {
-        NSArray *array = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"];
+        NSArray *array = @[@{@"imageName":@"1",@"state":@"."},@{@"imageName":@"2",@"state":@"-"},@{@"imageName":@"3",@"state":@"-"},@{@"imageName":@"4",@"state":@"."},@{@"imageName":@"5",@"state":@"+"},@{@"imageName":@"6",@"state":@"+"},@{@"imageName":@"7",@"state":@"-"},@{@"imageName":@"8",@"state":@"+"},@{@"imageName":@"9",@"state":@"."}];
         _imageDatasArray = [NSMutableArray arrayWithArray:array];
     }
     return _imageDatasArray;
