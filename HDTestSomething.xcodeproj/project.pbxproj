@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5E7373B5DC22273CCB5502AD /* libPods-HDTestSomething.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D59B692B5FC970A16CC02744 /* libPods-HDTestSomething.a */; };
+		AF50A7A71ED3DB9B00F6F837 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A11ED3DB9B00F6F837 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AF50A7A81ED3DB9B00F6F837 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A41ED3DB9B00F6F837 /* JSONKit.m */; };
+		AF50A7A91ED3DB9B00F6F837 /* VerifyTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A61ED3DB9B00F6F837 /* VerifyTools.m */; };
 		AF51DD281ED27E790018F2C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF51DD271ED27E790018F2C6 /* main.m */; };
 		AF51DD2B1ED27E790018F2C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF51DD2A1ED27E790018F2C6 /* AppDelegate.m */; };
 		AF51DD311ED27E790018F2C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF51DD2F1ED27E790018F2C6 /* Main.storyboard */; };
@@ -54,6 +57,13 @@
 
 /* Begin PBXFileReference section */
 		9BB637B3D109790893D48F7A /* Pods-HDTestSomething.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDTestSomething.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDTestSomething/Pods-HDTestSomething.debug.xcconfig"; sourceTree = "<group>"; };
+		AF50A7A01ED3DB9B00F6F837 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		AF50A7A11ED3DB9B00F6F837 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		AF50A7A21ED3DB9B00F6F837 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		AF50A7A31ED3DB9B00F6F837 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		AF50A7A41ED3DB9B00F6F837 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		AF50A7A51ED3DB9B00F6F837 /* VerifyTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyTools.h; sourceTree = "<group>"; };
+		AF50A7A61ED3DB9B00F6F837 /* VerifyTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyTools.m; sourceTree = "<group>"; };
 		AF51DD231ED27E790018F2C6 /* HDTestSomething.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDTestSomething.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF51DD271ED27E790018F2C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AF51DD291ED27E790018F2C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,6 +152,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AF50A79F1ED3DB6800F6F837 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				AF50A7A01ED3DB9B00F6F837 /* GTMBase64.h */,
+				AF50A7A11ED3DB9B00F6F837 /* GTMBase64.m */,
+				AF50A7A21ED3DB9B00F6F837 /* GTMDefines.h */,
+				AF50A7A31ED3DB9B00F6F837 /* JSONKit.h */,
+				AF50A7A41ED3DB9B00F6F837 /* JSONKit.m */,
+				AF50A7A51ED3DB9B00F6F837 /* VerifyTools.h */,
+				AF50A7A61ED3DB9B00F6F837 /* VerifyTools.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		AF51DD1A1ED27E790018F2C6 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +191,7 @@
 		AF51DD251ED27E790018F2C6 /* HDTestSomething */ = {
 			isa = PBXGroup;
 			children = (
+				AF50A79F1ED3DB6800F6F837 /* Tools */,
 				AF51DD5C1ED280B30018F2C6 /* HomePage */,
 				AF51DD5D1ED280B30018F2C6 /* News */,
 				AF51DD5F1ED280BC0018F2C6 /* Find */,
@@ -478,6 +503,9 @@
 			files = (
 				AF51DD2B1ED27E790018F2C6 /* AppDelegate.m in Sources */,
 				AF51DD691ED282A10018F2C6 /* HDNewsViewController.m in Sources */,
+				AF50A7A91ED3DB9B00F6F837 /* VerifyTools.m in Sources */,
+				AF50A7A81ED3DB9B00F6F837 /* JSONKit.m in Sources */,
+				AF50A7A71ED3DB9B00F6F837 /* GTMBase64.m in Sources */,
 				AF51DD631ED282530018F2C6 /* BaseViewController.m in Sources */,
 				AF51DD5B1ED27F6D0018F2C6 /* BaseTabBarController.m in Sources */,
 				AF51DD6C1ED282AC0018F2C6 /* HDFindViewController.m in Sources */,
@@ -735,6 +763,7 @@
 				AF51DD521ED27E7A0018F2C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF51DD531ED27E7A0018F2C6 /* Build configuration list for PBXNativeTarget "HDTestSomethingTests" */ = {
 			isa = XCConfigurationList;
@@ -743,6 +772,7 @@
 				AF51DD551ED27E7A0018F2C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF51DD561ED27E7A0018F2C6 /* Build configuration list for PBXNativeTarget "HDTestSomethingUITests" */ = {
 			isa = XCConfigurationList;
@@ -751,6 +781,7 @@
 				AF51DD581ED27E7A0018F2C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,6 +11,22 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+#import "VerifyTools.h"
+#endif
+
+#ifdef DEBUG
+//#   define LOG_INF(fmt,...) [BaseLog logInfo:fmt];
+//#   define LOG_WARN(fmt,...) [BaseLog logWarn:fmt];
+//#   define LOG_ERROR(fmt,...) [BaseLog logError:fmt];
+#   define LOG_INF(fmt,...) NSLog((@"[Information] %s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#   define LOG_WARN(fmt,...) NSLog((@"[Warning] %s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#   define LOG_ERROR(fmt,...) NSLog((@"[Error] %s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define LOG_INF(...)
+#   define LOG_WARN(...)
+#   define LOG_ERROR(...)
+#endif
 
 /***************************** 判断手机型号 **************************/
 #define iPhone4 ([UIScreen mainScreen].bounds.size.height == 480) // 判断是否位iPhone4
@@ -41,4 +57,6 @@
 /***************************** Log **************************/
 
 #define SINGLE_LINE_WIDTH           (1 / [UIScreen mainScreen].scale)
+#define KencodingCNtoEN(Str)  (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)Str,(CFStringRef)@"!$&'()*+,-./:;=?@_~%#[]",NULL,kCFStringEncodingUTF8));
+
 #endif /* Configure_pch */
