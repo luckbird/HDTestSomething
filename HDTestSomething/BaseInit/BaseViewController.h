@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "HDNetworking.h"
 @interface BaseViewController : UIViewController
-
+@property (nonatomic, strong) HDNetworking *http;
 @end

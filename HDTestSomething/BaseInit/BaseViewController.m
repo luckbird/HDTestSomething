@@ -7,7 +7,8 @@
 //
 
 #import "BaseViewController.h"
-//#import "Configure.pch"
+
+
 @interface BaseViewController ()
 
 @end
@@ -18,8 +19,16 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
+   
 }
 
+#pragma mark - getter method
+- (HDNetworking *)http {
+    if (!_http) {
+        _http = [HDNetworking shareURLSession];
+    }
+    return _http;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

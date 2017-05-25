@@ -17,13 +17,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"网络" style:UIBarButtonItemStylePlain target:self action:@selector(enterNetworkingInterface)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"网络" style:UIBarButtonItemStylePlain target:self action:@selector(enterNetworkingInterface)];
     // Do any additional setup after loading the view.
+    
+ 
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 //    [self simpleSearchInternet];
 //    [self learnURLLoading];
+    [self sendCM003];
+//    [self sendPM038];
+}
+- (void)sendCM003 {
+    NSMutableDictionary *dataDic = [NSMutableDictionary dictionary];
+    dataDic[@"loginId"] = @"15211460005";
+    dataDic[@"loginPWD"] = @"ho5w0jbhL+BHD+lO7P9eAA==";
+    dataDic[@"loginType"] = @"1";
+    [self.http sendHttp:@"CM003" content:dataDic controller:nil aimate:NO completion:^(NSString *isMore, NSDictionary *backCodeDict, NSDictionary *backContentDic, NSArray *backContentListDict, NSDictionary *backObligateDict) {
+      
+    } error:^(NSError *connectionError) {
+        
+    }];
+}
+- (void)sendPM038 {
+    NSMutableDictionary *dataDic = [NSMutableDictionary dictionary];
+    dataDic[@"userCode"] = @"m15211460005";
+    dataDic[@"tdCardNo"] = @"m00000000020449";
+    [self.http sendHttp:@"PM038" content:dataDic controller:nil aimate:NO completion:^(NSString *isMore, NSDictionary *backCodeDict, NSDictionary *backContentDic, NSArray *backContentListDict, NSDictionary *backObligateDict) {
+       
+    } error:^(NSError *connectionError) {
+        
+    }];
 }
 - (void)learnURLLoading {
     NSURL *url = [NSURL URLWithString:

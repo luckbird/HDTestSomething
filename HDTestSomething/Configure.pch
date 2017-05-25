@@ -61,4 +61,5 @@
 #define SINGLE_LINE_WIDTH           (1 / [UIScreen mainScreen].scale)
 #define KencodingCNtoEN(Str)  (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)Str,(CFStringRef)@"!$&'()*+,-./:;=?@_~%#[]",NULL,kCFStringEncodingUTF8));
 
+#define BASE_URL @"https://10.213.24.50:8080/MobileGate/login.do"
 #endif /* Configure_pch */

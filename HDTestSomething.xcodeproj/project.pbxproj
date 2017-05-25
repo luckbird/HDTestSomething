@@ -45,6 +45,7 @@
 		AF51DD8A1ED2DB980018F2C6 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = AF51DD801ED2DB980018F2C6 /* 7.png */; };
 		AF51DD8B1ED2DB980018F2C6 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = AF51DD811ED2DB980018F2C6 /* 8.png */; };
 		AF51DD8C1ED2DB980018F2C6 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = AF51DD821ED2DB980018F2C6 /* 9.png */; };
+		AF66C7421ED6B52100724458 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AF66C7411ED6B52100724458 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,8 @@
 		AF51DD801ED2DB980018F2C6 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		AF51DD811ED2DB980018F2C6 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		AF51DD821ED2DB980018F2C6 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		AF66C7401ED6B52100724458 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		AF66C7411ED6B52100724458 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		D1E1509E2059A873114ACCED /* Pods-HDTestSomething.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDTestSomething.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDTestSomething/Pods-HDTestSomething.release.xcconfig"; sourceTree = "<group>"; };
 		D59B692B5FC970A16CC02744 /* libPods-HDTestSomething.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HDTestSomething.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -210,6 +213,8 @@
 				AF50A7B61ED3E16900F6F837 /* u_ysepay_com_ios.cer */,
 				AF50A7BE1ED4110600F6F837 /* HDNetworking.h */,
 				AF50A7BF1ED4110600F6F837 /* HDNetworking.m */,
+				AF66C7401ED6B52100724458 /* Reachability.h */,
+				AF66C7411ED6B52100724458 /* Reachability.m */,
 			);
 			path = BC_RSA;
 			sourceTree = "<group>";
@@ -572,6 +577,7 @@
 				AF50A7C01ED4110600F6F837 /* HDNetworking.m in Sources */,
 				AF51DD661ED282960018F2C6 /* HDHomePageViewController.m in Sources */,
 				AF50A7B71ED3E16900F6F837 /* BC_RSA.m in Sources */,
+				AF66C7421ED6B52100724458 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
