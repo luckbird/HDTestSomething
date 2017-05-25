@@ -7,6 +7,7 @@
 //
 
 #import "HDNewsViewController.h"
+#import "HDNetworkingLearnController.h"
 
 @interface HDNewsViewController ()<NSURLConnectionDelegate>
 
@@ -16,12 +17,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"网络" style:UIBarButtonItemStylePlain target:self action:@selector(enterNetworkingInterface)];
     // Do any additional setup after loading the view.
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self simpleSearchInternet];
+//    [self simpleSearchInternet];
+//    [self learnURLLoading];
+}
+- (void)learnURLLoading {
+    NSURL *url = [NSURL URLWithString:
+                  @"http://www.onevcat.com/2011/11/debug/;param?p=307#more-307"];
+    NSLog(@"Scheme: %@", [url scheme]);
+    NSLog(@"Host: %@", [url host]);
+    NSLog(@"Port: %@", [url port]);
+    NSLog(@"Path: %@", [url path]);
+    NSLog(@"Relative path: %@", [url relativePath]);
+    NSLog(@"Path components as array: %@", [url pathComponents]);
+    NSLog(@"Parameter string: %@", [url parameterString]);
+    NSLog(@"Query: %@", [url query]);
+    NSLog(@"Fragment: %@", [url fragment]);
 }
 - (void)simpleSearchInternet {
     NSString *urlStr = @"https://www.baidu.com";
@@ -31,6 +46,11 @@
     NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
     [connection start];
    
+}
+#pragma mark - button action method
+- (void)enterNetworkingInterface {
+    HDNetworkingLearnController *vc = [HDNetworkingLearnController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark - NSURLConnection delegate
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge  {

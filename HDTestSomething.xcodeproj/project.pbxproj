@@ -11,6 +11,15 @@
 		AF50A7A71ED3DB9B00F6F837 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A11ED3DB9B00F6F837 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AF50A7A81ED3DB9B00F6F837 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A41ED3DB9B00F6F837 /* JSONKit.m */; };
 		AF50A7A91ED3DB9B00F6F837 /* VerifyTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A61ED3DB9B00F6F837 /* VerifyTools.m */; };
+		AF50A7AD1ED3E11E00F6F837 /* HDNetworkingLearnController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7AC1ED3E11E00F6F837 /* HDNetworkingLearnController.m */; };
+		AF50A7B71ED3E16900F6F837 /* BC_RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7B01ED3E16900F6F837 /* BC_RSA.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AF50A7B81ED3E16900F6F837 /* jim.cer in Resources */ = {isa = PBXBuildFile; fileRef = AF50A7B11ED3E16900F6F837 /* jim.cer */; };
+		AF50A7B91ED3E16900F6F837 /* test.pfx in Resources */ = {isa = PBXBuildFile; fileRef = AF50A7B21ED3E16900F6F837 /* test.pfx */; };
+		AF50A7BA1ED3E16900F6F837 /* u.ysepay.com.pfx in Resources */ = {isa = PBXBuildFile; fileRef = AF50A7B31ED3E16900F6F837 /* u.ysepay.com.pfx */; };
+		AF50A7BB1ED3E16900F6F837 /* u.ysepay.com_new.cer in Resources */ = {isa = PBXBuildFile; fileRef = AF50A7B41ED3E16900F6F837 /* u.ysepay.com_new.cer */; };
+		AF50A7BC1ED3E16900F6F837 /* u.ysepay.com_new.pfx in Resources */ = {isa = PBXBuildFile; fileRef = AF50A7B51ED3E16900F6F837 /* u.ysepay.com_new.pfx */; };
+		AF50A7BD1ED3E16900F6F837 /* u_ysepay_com_ios.cer in Resources */ = {isa = PBXBuildFile; fileRef = AF50A7B61ED3E16900F6F837 /* u_ysepay_com_ios.cer */; };
+		AF50A7C01ED4110600F6F837 /* HDNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7BF1ED4110600F6F837 /* HDNetworking.m */; };
 		AF51DD281ED27E790018F2C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF51DD271ED27E790018F2C6 /* main.m */; };
 		AF51DD2B1ED27E790018F2C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF51DD2A1ED27E790018F2C6 /* AppDelegate.m */; };
 		AF51DD311ED27E790018F2C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF51DD2F1ED27E790018F2C6 /* Main.storyboard */; };
@@ -64,6 +73,18 @@
 		AF50A7A41ED3DB9B00F6F837 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		AF50A7A51ED3DB9B00F6F837 /* VerifyTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyTools.h; sourceTree = "<group>"; };
 		AF50A7A61ED3DB9B00F6F837 /* VerifyTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyTools.m; sourceTree = "<group>"; };
+		AF50A7AB1ED3E11E00F6F837 /* HDNetworkingLearnController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDNetworkingLearnController.h; sourceTree = "<group>"; };
+		AF50A7AC1ED3E11E00F6F837 /* HDNetworkingLearnController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDNetworkingLearnController.m; sourceTree = "<group>"; };
+		AF50A7AF1ED3E16900F6F837 /* BC_RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BC_RSA.h; sourceTree = "<group>"; };
+		AF50A7B01ED3E16900F6F837 /* BC_RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BC_RSA.m; sourceTree = "<group>"; };
+		AF50A7B11ED3E16900F6F837 /* jim.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = jim.cer; sourceTree = "<group>"; };
+		AF50A7B21ED3E16900F6F837 /* test.pfx */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.pfx; sourceTree = "<group>"; };
+		AF50A7B31ED3E16900F6F837 /* u.ysepay.com.pfx */ = {isa = PBXFileReference; lastKnownFileType = file; path = u.ysepay.com.pfx; sourceTree = "<group>"; };
+		AF50A7B41ED3E16900F6F837 /* u.ysepay.com_new.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = u.ysepay.com_new.cer; sourceTree = "<group>"; };
+		AF50A7B51ED3E16900F6F837 /* u.ysepay.com_new.pfx */ = {isa = PBXFileReference; lastKnownFileType = file; path = u.ysepay.com_new.pfx; sourceTree = "<group>"; };
+		AF50A7B61ED3E16900F6F837 /* u_ysepay_com_ios.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = u_ysepay_com_ios.cer; sourceTree = "<group>"; };
+		AF50A7BE1ED4110600F6F837 /* HDNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDNetworking.h; sourceTree = "<group>"; };
+		AF50A7BF1ED4110600F6F837 /* HDNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDNetworking.m; sourceTree = "<group>"; };
 		AF51DD231ED27E790018F2C6 /* HDTestSomething.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDTestSomething.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF51DD271ED27E790018F2C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AF51DD291ED27E790018F2C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -155,6 +176,7 @@
 		AF50A79F1ED3DB6800F6F837 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				AF50A7AE1ED3E16900F6F837 /* BC_RSA */,
 				AF50A7A01ED3DB9B00F6F837 /* GTMBase64.h */,
 				AF50A7A11ED3DB9B00F6F837 /* GTMBase64.m */,
 				AF50A7A21ED3DB9B00F6F837 /* GTMDefines.h */,
@@ -164,6 +186,32 @@
 				AF50A7A61ED3DB9B00F6F837 /* VerifyTools.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		AF50A7AA1ED3E0E600F6F837 /* InternetLearning */ = {
+			isa = PBXGroup;
+			children = (
+				AF50A7AB1ED3E11E00F6F837 /* HDNetworkingLearnController.h */,
+				AF50A7AC1ED3E11E00F6F837 /* HDNetworkingLearnController.m */,
+			);
+			path = InternetLearning;
+			sourceTree = "<group>";
+		};
+		AF50A7AE1ED3E16900F6F837 /* BC_RSA */ = {
+			isa = PBXGroup;
+			children = (
+				AF50A7AF1ED3E16900F6F837 /* BC_RSA.h */,
+				AF50A7B01ED3E16900F6F837 /* BC_RSA.m */,
+				AF50A7B11ED3E16900F6F837 /* jim.cer */,
+				AF50A7B21ED3E16900F6F837 /* test.pfx */,
+				AF50A7B31ED3E16900F6F837 /* u.ysepay.com.pfx */,
+				AF50A7B41ED3E16900F6F837 /* u.ysepay.com_new.cer */,
+				AF50A7B51ED3E16900F6F837 /* u.ysepay.com_new.pfx */,
+				AF50A7B61ED3E16900F6F837 /* u_ysepay_com_ios.cer */,
+				AF50A7BE1ED4110600F6F837 /* HDNetworking.h */,
+				AF50A7BF1ED4110600F6F837 /* HDNetworking.m */,
+			);
+			path = BC_RSA;
 			sourceTree = "<group>";
 		};
 		AF51DD1A1ED27E790018F2C6 = {
@@ -261,6 +309,7 @@
 		AF51DD5E1ED280BC0018F2C6 /* BaseInit */ = {
 			isa = PBXGroup;
 			children = (
+				AF50A7AA1ED3E0E600F6F837 /* InternetLearning */,
 				AF51DD591ED27F6D0018F2C6 /* BaseTabBarController.h */,
 				AF51DD5A1ED27F6D0018F2C6 /* BaseTabBarController.m */,
 				AF51DD611ED282530018F2C6 /* BaseViewController.h */,
@@ -416,18 +465,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF50A7BD1ED3E16900F6F837 /* u_ysepay_com_ios.cer in Resources */,
 				AF51DD8B1ED2DB980018F2C6 /* 8.png in Resources */,
+				AF50A7B81ED3E16900F6F837 /* jim.cer in Resources */,
+				AF50A7BB1ED3E16900F6F837 /* u.ysepay.com_new.cer in Resources */,
 				AF51DD8A1ED2DB980018F2C6 /* 7.png in Resources */,
 				AF51DD851ED2DB980018F2C6 /* 2.png in Resources */,
 				AF51DD841ED2DB980018F2C6 /* 10.png in Resources */,
 				AF51DD8C1ED2DB980018F2C6 /* 9.png in Resources */,
 				AF51DD361ED27E790018F2C6 /* LaunchScreen.storyboard in Resources */,
+				AF50A7BA1ED3E16900F6F837 /* u.ysepay.com.pfx in Resources */,
 				AF51DD831ED2DB980018F2C6 /* 1.png in Resources */,
 				AF51DD891ED2DB980018F2C6 /* 6.png in Resources */,
 				AF51DD871ED2DB980018F2C6 /* 4.png in Resources */,
 				AF51DD331ED27E790018F2C6 /* Assets.xcassets in Resources */,
 				AF51DD881ED2DB980018F2C6 /* 5.png in Resources */,
 				AF51DD861ED2DB980018F2C6 /* 3.png in Resources */,
+				AF50A7B91ED3E16900F6F837 /* test.pfx in Resources */,
+				AF50A7BC1ED3E16900F6F837 /* u.ysepay.com_new.pfx in Resources */,
 				AF51DD311ED27E790018F2C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +560,7 @@
 				AF51DD691ED282A10018F2C6 /* HDNewsViewController.m in Sources */,
 				AF50A7A91ED3DB9B00F6F837 /* VerifyTools.m in Sources */,
 				AF50A7A81ED3DB9B00F6F837 /* JSONKit.m in Sources */,
+				AF50A7AD1ED3E11E00F6F837 /* HDNetworkingLearnController.m in Sources */,
 				AF50A7A71ED3DB9B00F6F837 /* GTMBase64.m in Sources */,
 				AF51DD631ED282530018F2C6 /* BaseViewController.m in Sources */,
 				AF51DD5B1ED27F6D0018F2C6 /* BaseTabBarController.m in Sources */,
@@ -513,7 +569,9 @@
 				AF51DD771ED2B89D0018F2C6 /* HDTestCollectionViewCell.m in Sources */,
 				AF51DD6F1ED282B90018F2C6 /* HDMineViewController.m in Sources */,
 				AF51DD281ED27E790018F2C6 /* main.m in Sources */,
+				AF50A7C01ED4110600F6F837 /* HDNetworking.m in Sources */,
 				AF51DD661ED282960018F2C6 /* HDHomePageViewController.m in Sources */,
+				AF50A7B71ED3E16900F6F837 /* BC_RSA.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
