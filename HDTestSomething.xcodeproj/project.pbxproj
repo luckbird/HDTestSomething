@@ -46,6 +46,8 @@
 		AF51DD8B1ED2DB980018F2C6 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = AF51DD811ED2DB980018F2C6 /* 8.png */; };
 		AF51DD8C1ED2DB980018F2C6 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = AF51DD821ED2DB980018F2C6 /* 9.png */; };
 		AF66C7421ED6B52100724458 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AF66C7411ED6B52100724458 /* Reachability.m */; };
+		AFBD5AFC1EE5040000FAC796 /* HDJudgeInputTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBD5AFB1EE5040000FAC796 /* HDJudgeInputTextStyle.m */; };
+		AFBD5AFF1EE508E100FAC796 /* HDTestTextfieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBD5AFE1EE508E100FAC796 /* HDTestTextfieldViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,10 @@
 		AF51DD821ED2DB980018F2C6 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
 		AF66C7401ED6B52100724458 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		AF66C7411ED6B52100724458 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		AFBD5AFA1EE5040000FAC796 /* HDJudgeInputTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDJudgeInputTextStyle.h; sourceTree = "<group>"; };
+		AFBD5AFB1EE5040000FAC796 /* HDJudgeInputTextStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDJudgeInputTextStyle.m; sourceTree = "<group>"; };
+		AFBD5AFD1EE508E100FAC796 /* HDTestTextfieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDTestTextfieldViewController.h; sourceTree = "<group>"; };
+		AFBD5AFE1EE508E100FAC796 /* HDTestTextfieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDTestTextfieldViewController.m; sourceTree = "<group>"; };
 		D1E1509E2059A873114ACCED /* Pods-HDTestSomething.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDTestSomething.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDTestSomething/Pods-HDTestSomething.release.xcconfig"; sourceTree = "<group>"; };
 		D59B692B5FC970A16CC02744 /* libPods-HDTestSomething.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HDTestSomething.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -314,6 +320,7 @@
 		AF51DD5E1ED280BC0018F2C6 /* BaseInit */ = {
 			isa = PBXGroup;
 			children = (
+				AFBD5AF61EE4FFBE00FAC796 /* Tools */,
 				AF50A7AA1ED3E0E600F6F837 /* InternetLearning */,
 				AF51DD591ED27F6D0018F2C6 /* BaseTabBarController.h */,
 				AF51DD5A1ED27F6D0018F2C6 /* BaseTabBarController.m */,
@@ -328,6 +335,8 @@
 			children = (
 				AF51DD6A1ED282AC0018F2C6 /* HDFindViewController.h */,
 				AF51DD6B1ED282AC0018F2C6 /* HDFindViewController.m */,
+				AFBD5AFD1EE508E100FAC796 /* HDTestTextfieldViewController.h */,
+				AFBD5AFE1EE508E100FAC796 /* HDTestTextfieldViewController.m */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -356,6 +365,15 @@
 				AF51DD821ED2DB980018F2C6 /* 9.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		AFBD5AF61EE4FFBE00FAC796 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				AFBD5AFA1EE5040000FAC796 /* HDJudgeInputTextStyle.h */,
+				AFBD5AFB1EE5040000FAC796 /* HDJudgeInputTextStyle.m */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -562,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF51DD2B1ED27E790018F2C6 /* AppDelegate.m in Sources */,
+				AFBD5AFC1EE5040000FAC796 /* HDJudgeInputTextStyle.m in Sources */,
 				AF51DD691ED282A10018F2C6 /* HDNewsViewController.m in Sources */,
 				AF50A7A91ED3DB9B00F6F837 /* VerifyTools.m in Sources */,
 				AF50A7A81ED3DB9B00F6F837 /* JSONKit.m in Sources */,
@@ -572,6 +591,7 @@
 				AF51DD6C1ED282AC0018F2C6 /* HDFindViewController.m in Sources */,
 				AF51DD741ED2B4B20018F2C6 /* HDTestCollectionViewController.m in Sources */,
 				AF51DD771ED2B89D0018F2C6 /* HDTestCollectionViewCell.m in Sources */,
+				AFBD5AFF1EE508E100FAC796 /* HDTestTextfieldViewController.m in Sources */,
 				AF51DD6F1ED282B90018F2C6 /* HDMineViewController.m in Sources */,
 				AF51DD281ED27E790018F2C6 /* main.m in Sources */,
 				AF50A7C01ED4110600F6F837 /* HDNetworking.m in Sources */,

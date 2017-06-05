@@ -15,6 +15,7 @@
 #import "VerifyTools.h"
 #import "JSONKit.h"
 #import "GTMBase64.h"
+#import <UIKit/UIKit.h>
 #endif
 
 #ifdef DEBUG

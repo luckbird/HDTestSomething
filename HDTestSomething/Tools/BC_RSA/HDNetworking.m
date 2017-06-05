@@ -67,7 +67,7 @@ static HDNetworking *netWork;
             NSArray *backContentlist = [dict1 objectForKey:@"contentList"];
             NSDictionary *backContentDict = [dict1 objectForKey:@"content"];
             NSDictionary *backHeadDict = [dict objectForKey:@"head"];
-            NSLog(@"==============%@收到回执数据:\n\n backCodeDict:\n%@\n\n backContentDict:\n%@\n\n backContentlist:\n%@\n\n",[backHeadDict objectForKey:@"msgCode"],backCodeDict,backContentDict,backContentlist);
+            NSLog(@"==============%@收到回执数据:\n\n backCodeDict:\n%@\n\n backContentDict:\n%@\n\n backContentlist:\n%@\n\n==============/n",[backHeadDict objectForKey:@"msgCode"],backCodeDict,backContentDict,backContentlist);
             compeletion(@"",backCodeDict,backContentDict,backContentlist,nil);
         }
     }];
