@@ -10,6 +10,9 @@
 		5E7373B5DC22273CCB5502AD /* libPods-HDTestSomething.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D59B692B5FC970A16CC02744 /* libPods-HDTestSomething.a */; };
 		AF417DC31EE6379E00CCE219 /* UIView+HDUIViewCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AF417DC21EE6379E00CCE219 /* UIView+HDUIViewCategory.m */; };
 		AF417DC61EE63BA500CCE219 /* HDTestmarqueeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF417DC51EE63BA500CCE219 /* HDTestmarqueeViewController.m */; };
+		AF417DC91EE63E1200CCE219 /* HDNorecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF417DC81EE63E1200CCE219 /* HDNorecordView.m */; };
+		AF417DCC1EE64FB600CCE219 /* HDTestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF417DCB1EE64FB600CCE219 /* HDTestTableViewCell.m */; };
+		AF417DCF1EE68AD500CCE219 /* HDTestTableViewEditingController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF417DCE1EE68AD500CCE219 /* HDTestTableViewEditingController.m */; };
 		AF50A7A71ED3DB9B00F6F837 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A11ED3DB9B00F6F837 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AF50A7A81ED3DB9B00F6F837 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A41ED3DB9B00F6F837 /* JSONKit.m */; };
 		AF50A7A91ED3DB9B00F6F837 /* VerifyTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A61ED3DB9B00F6F837 /* VerifyTools.m */; };
@@ -75,6 +78,12 @@
 		AF417DC21EE6379E00CCE219 /* UIView+HDUIViewCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HDUIViewCategory.m"; sourceTree = "<group>"; };
 		AF417DC41EE63BA500CCE219 /* HDTestmarqueeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDTestmarqueeViewController.h; sourceTree = "<group>"; };
 		AF417DC51EE63BA500CCE219 /* HDTestmarqueeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDTestmarqueeViewController.m; sourceTree = "<group>"; };
+		AF417DC71EE63E1200CCE219 /* HDNorecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDNorecordView.h; sourceTree = "<group>"; };
+		AF417DC81EE63E1200CCE219 /* HDNorecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDNorecordView.m; sourceTree = "<group>"; };
+		AF417DCA1EE64FB600CCE219 /* HDTestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDTestTableViewCell.h; sourceTree = "<group>"; };
+		AF417DCB1EE64FB600CCE219 /* HDTestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDTestTableViewCell.m; sourceTree = "<group>"; };
+		AF417DCD1EE68AD500CCE219 /* HDTestTableViewEditingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDTestTableViewEditingController.h; sourceTree = "<group>"; };
+		AF417DCE1EE68AD500CCE219 /* HDTestTableViewEditingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDTestTableViewEditingController.m; sourceTree = "<group>"; };
 		AF50A7A01ED3DB9B00F6F837 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		AF50A7A11ED3DB9B00F6F837 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		AF50A7A21ED3DB9B00F6F837 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -352,6 +361,10 @@
 			children = (
 				AF51DD6D1ED282B90018F2C6 /* HDMineViewController.h */,
 				AF51DD6E1ED282B90018F2C6 /* HDMineViewController.m */,
+				AF417DCD1EE68AD500CCE219 /* HDTestTableViewEditingController.h */,
+				AF417DCE1EE68AD500CCE219 /* HDTestTableViewEditingController.m */,
+				AF417DCA1EE64FB600CCE219 /* HDTestTableViewCell.h */,
+				AF417DCB1EE64FB600CCE219 /* HDTestTableViewCell.m */,
 				AF417DC41EE63BA500CCE219 /* HDTestmarqueeViewController.h */,
 				AF417DC51EE63BA500CCE219 /* HDTestmarqueeViewController.m */,
 			);
@@ -382,6 +395,8 @@
 				AFBD5AFB1EE5040000FAC796 /* HDJudgeInputTextStyle.m */,
 				AF417DC11EE6379E00CCE219 /* UIView+HDUIViewCategory.h */,
 				AF417DC21EE6379E00CCE219 /* UIView+HDUIViewCategory.m */,
+				AF417DC71EE63E1200CCE219 /* HDNorecordView.h */,
+				AF417DC81EE63E1200CCE219 /* HDNorecordView.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -593,6 +608,7 @@
 				AFBD5AFC1EE5040000FAC796 /* HDJudgeInputTextStyle.m in Sources */,
 				AF51DD691ED282A10018F2C6 /* HDNewsViewController.m in Sources */,
 				AF50A7A91ED3DB9B00F6F837 /* VerifyTools.m in Sources */,
+				AF417DCF1EE68AD500CCE219 /* HDTestTableViewEditingController.m in Sources */,
 				AF50A7A81ED3DB9B00F6F837 /* JSONKit.m in Sources */,
 				AF50A7AD1ED3E11E00F6F837 /* HDNetworkingLearnController.m in Sources */,
 				AF50A7A71ED3DB9B00F6F837 /* GTMBase64.m in Sources */,
@@ -607,8 +623,10 @@
 				AF51DD281ED27E790018F2C6 /* main.m in Sources */,
 				AF50A7C01ED4110600F6F837 /* HDNetworking.m in Sources */,
 				AF51DD661ED282960018F2C6 /* HDHomePageViewController.m in Sources */,
+				AF417DCC1EE64FB600CCE219 /* HDTestTableViewCell.m in Sources */,
 				AF50A7B71ED3E16900F6F837 /* BC_RSA.m in Sources */,
 				AF66C7421ED6B52100724458 /* Reachability.m in Sources */,
+				AF417DC91EE63E1200CCE219 /* HDNorecordView.m in Sources */,
 				AF417DC31EE6379E00CCE219 /* UIView+HDUIViewCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

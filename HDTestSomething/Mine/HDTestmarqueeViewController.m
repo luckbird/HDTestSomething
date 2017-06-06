@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"跑马灯";
     [self.view addSubview:self.currentLabel];
     // Do any additional setup after loading the view.
 }
