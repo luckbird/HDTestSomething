@@ -17,16 +17,31 @@
 - (instancetype)initWithFrame:(CGRect)frame andNorecordTitle:(NSString *)titleStr norecordImageName:(NSString *)imageName {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
+        [self setSubviews];
         
         self.imageView.image = [UIImage imageNamed:[VerifyTools getSafeString:imageName]];
-        [self addSubview:self.imageView];
-        
         self.promoteLabel.text = [VerifyTools getSafeString:titleStr];
-        [self addSubview:self.promoteLabel];
+        
+    }
+    return self;
+}
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self setSubviews];
+    }
+    return self;
+}
+- (instancetype)init {
+    if (self = [super init]) {
+        [self setSubviews];
     }
     return self;
 }
 
+- (void)setSubviews {
+    [self addSubview:self.imageView];
+    [self addSubview:self.promoteLabel];
+}
 #pragma mark - getter setter method
 - (UIImageView *)imageView {
     if (!_imageView) {
@@ -43,6 +58,7 @@
         _promoteLabel.font = [UIFont systemFontOfSize:14];
         _promoteLabel.textColor = kColorWithRGB(190, 190, 190);
         _promoteLabel.textAlignment = NSTextAlignmentCenter;
+        _promoteLabel.text = @"数据正在加载中...";
     }
     return _promoteLabel;
 }

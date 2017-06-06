@@ -13,6 +13,7 @@
 		AF417DC91EE63E1200CCE219 /* HDNorecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF417DC81EE63E1200CCE219 /* HDNorecordView.m */; };
 		AF417DCC1EE64FB600CCE219 /* HDTestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF417DCB1EE64FB600CCE219 /* HDTestTableViewCell.m */; };
 		AF417DCF1EE68AD500CCE219 /* HDTestTableViewEditingController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF417DCE1EE68AD500CCE219 /* HDTestTableViewEditingController.m */; };
+		AF417DD11EE6937E00CCE219 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AF417DD01EE6937E00CCE219 /* libsqlite3.0.tbd */; };
 		AF50A7A71ED3DB9B00F6F837 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A11ED3DB9B00F6F837 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AF50A7A81ED3DB9B00F6F837 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A41ED3DB9B00F6F837 /* JSONKit.m */; };
 		AF50A7A91ED3DB9B00F6F837 /* VerifyTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A61ED3DB9B00F6F837 /* VerifyTools.m */; };
@@ -84,6 +85,7 @@
 		AF417DCB1EE64FB600CCE219 /* HDTestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDTestTableViewCell.m; sourceTree = "<group>"; };
 		AF417DCD1EE68AD500CCE219 /* HDTestTableViewEditingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDTestTableViewEditingController.h; sourceTree = "<group>"; };
 		AF417DCE1EE68AD500CCE219 /* HDTestTableViewEditingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDTestTableViewEditingController.m; sourceTree = "<group>"; };
+		AF417DD01EE6937E00CCE219 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		AF50A7A01ED3DB9B00F6F837 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		AF50A7A11ED3DB9B00F6F837 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		AF50A7A21ED3DB9B00F6F837 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF417DD11EE6937E00CCE219 /* libsqlite3.0.tbd in Frameworks */,
 				5E7373B5DC22273CCB5502AD /* libPods-HDTestSomething.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,6 +195,7 @@
 		9B22FBD85966DD78950F8321 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF417DD01EE6937E00CCE219 /* libsqlite3.0.tbd */,
 				D59B692B5FC970A16CC02744 /* libPods-HDTestSomething.a */,
 			);
 			name = Frameworks;
