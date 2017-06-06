@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E7373B5DC22273CCB5502AD /* libPods-HDTestSomething.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D59B692B5FC970A16CC02744 /* libPods-HDTestSomething.a */; };
+		AF417DC31EE6379E00CCE219 /* UIView+HDUIViewCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AF417DC21EE6379E00CCE219 /* UIView+HDUIViewCategory.m */; };
 		AF50A7A71ED3DB9B00F6F837 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A11ED3DB9B00F6F837 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AF50A7A81ED3DB9B00F6F837 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A41ED3DB9B00F6F837 /* JSONKit.m */; };
 		AF50A7A91ED3DB9B00F6F837 /* VerifyTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AF50A7A61ED3DB9B00F6F837 /* VerifyTools.m */; };
@@ -69,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		9BB637B3D109790893D48F7A /* Pods-HDTestSomething.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDTestSomething.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDTestSomething/Pods-HDTestSomething.debug.xcconfig"; sourceTree = "<group>"; };
+		AF417DC11EE6379E00CCE219 /* UIView+HDUIViewCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HDUIViewCategory.h"; sourceTree = "<group>"; };
+		AF417DC21EE6379E00CCE219 /* UIView+HDUIViewCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HDUIViewCategory.m"; sourceTree = "<group>"; };
 		AF50A7A01ED3DB9B00F6F837 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		AF50A7A11ED3DB9B00F6F837 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		AF50A7A21ED3DB9B00F6F837 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -372,6 +375,8 @@
 			children = (
 				AFBD5AFA1EE5040000FAC796 /* HDJudgeInputTextStyle.h */,
 				AFBD5AFB1EE5040000FAC796 /* HDJudgeInputTextStyle.m */,
+				AF417DC11EE6379E00CCE219 /* UIView+HDUIViewCategory.h */,
+				AF417DC21EE6379E00CCE219 /* UIView+HDUIViewCategory.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -598,6 +603,7 @@
 				AF51DD661ED282960018F2C6 /* HDHomePageViewController.m in Sources */,
 				AF50A7B71ED3E16900F6F837 /* BC_RSA.m in Sources */,
 				AF66C7421ED6B52100724458 /* Reachability.m in Sources */,
+				AF417DC31EE6379E00CCE219 /* UIView+HDUIViewCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

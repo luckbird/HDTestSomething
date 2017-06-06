@@ -16,6 +16,7 @@
 #import "JSONKit.h"
 #import "GTMBase64.h"
 #import <UIKit/UIKit.h>
+#import "UIView+HDUIViewCategory.h"
 #endif
 
 #ifdef DEBUG
