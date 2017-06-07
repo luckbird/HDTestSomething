@@ -17,6 +17,7 @@
 #import "GTMBase64.h"
 #import <UIKit/UIKit.h>
 #import "UIView+HDUIViewCategory.h"
+#import "HDSqliteManager.h"
 #endif
 
 #ifdef DEBUG
@@ -64,4 +65,5 @@
 #define KencodingCNtoEN(Str)  (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)Str,(CFStringRef)@"!$&'()*+,-./:;=?@_~%#[]",NULL,kCFStringEncodingUTF8));
 
 #define BASE_URL @"https://10.213.24.50:8080/MobileGate/login.do"
+#define kSQLExecute(string) [[HDSqliteManager shareSqliteManager] executeNonQuery:string];
 #endif /* Configure_pch */

@@ -51,6 +51,9 @@
 		AF51DD8A1ED2DB980018F2C6 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = AF51DD801ED2DB980018F2C6 /* 7.png */; };
 		AF51DD8B1ED2DB980018F2C6 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = AF51DD811ED2DB980018F2C6 /* 8.png */; };
 		AF51DD8C1ED2DB980018F2C6 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = AF51DD821ED2DB980018F2C6 /* 9.png */; };
+		AF5CE79D1EE794F200C2E291 /* HDSqliteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5CE79C1EE794F200C2E291 /* HDSqliteManager.m */; };
+		AF5CE7A01EE7A8BE00C2E291 /* HDUserInfoTable.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5CE79F1EE7A8BE00C2E291 /* HDUserInfoTable.m */; };
+		AF5CE7A31EE7E33B00C2E291 /* HDSqlitePersoninfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5CE7A21EE7E33B00C2E291 /* HDSqlitePersoninfoViewController.m */; };
 		AF66C7421ED6B52100724458 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AF66C7411ED6B52100724458 /* Reachability.m */; };
 		AFBD5AFC1EE5040000FAC796 /* HDJudgeInputTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBD5AFB1EE5040000FAC796 /* HDJudgeInputTextStyle.m */; };
 		AFBD5AFF1EE508E100FAC796 /* HDTestTextfieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBD5AFE1EE508E100FAC796 /* HDTestTextfieldViewController.m */; };
@@ -146,6 +149,12 @@
 		AF51DD801ED2DB980018F2C6 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		AF51DD811ED2DB980018F2C6 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		AF51DD821ED2DB980018F2C6 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		AF5CE79B1EE794F200C2E291 /* HDSqliteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDSqliteManager.h; sourceTree = "<group>"; };
+		AF5CE79C1EE794F200C2E291 /* HDSqliteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDSqliteManager.m; sourceTree = "<group>"; };
+		AF5CE79E1EE7A8BE00C2E291 /* HDUserInfoTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDUserInfoTable.h; sourceTree = "<group>"; };
+		AF5CE79F1EE7A8BE00C2E291 /* HDUserInfoTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDUserInfoTable.m; sourceTree = "<group>"; };
+		AF5CE7A11EE7E33B00C2E291 /* HDSqlitePersoninfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDSqlitePersoninfoViewController.h; sourceTree = "<group>"; };
+		AF5CE7A21EE7E33B00C2E291 /* HDSqlitePersoninfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDSqlitePersoninfoViewController.m; sourceTree = "<group>"; };
 		AF66C7401ED6B52100724458 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		AF66C7411ED6B52100724458 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		AFBD5AFA1EE5040000FAC796 /* HDJudgeInputTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDJudgeInputTextStyle.h; sourceTree = "<group>"; };
@@ -199,6 +208,17 @@
 				D59B692B5FC970A16CC02744 /* libPods-HDTestSomething.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF417DD21EE6B90F00CCE219 /* sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				AF5CE79B1EE794F200C2E291 /* HDSqliteManager.h */,
+				AF5CE79C1EE794F200C2E291 /* HDSqliteManager.m */,
+				AF5CE79E1EE7A8BE00C2E291 /* HDUserInfoTable.h */,
+				AF5CE79F1EE7A8BE00C2E291 /* HDUserInfoTable.m */,
+			);
+			path = sqlite;
 			sourceTree = "<group>";
 		};
 		AF50A79F1ED3DB6800F6F837 /* Tools */ = {
@@ -365,6 +385,8 @@
 			children = (
 				AF51DD6D1ED282B90018F2C6 /* HDMineViewController.h */,
 				AF51DD6E1ED282B90018F2C6 /* HDMineViewController.m */,
+				AF5CE7A11EE7E33B00C2E291 /* HDSqlitePersoninfoViewController.h */,
+				AF5CE7A21EE7E33B00C2E291 /* HDSqlitePersoninfoViewController.m */,
 				AF417DCD1EE68AD500CCE219 /* HDTestTableViewEditingController.h */,
 				AF417DCE1EE68AD500CCE219 /* HDTestTableViewEditingController.m */,
 				AF417DCA1EE64FB600CCE219 /* HDTestTableViewCell.h */,
@@ -395,6 +417,7 @@
 		AFBD5AF61EE4FFBE00FAC796 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				AF417DD21EE6B90F00CCE219 /* sqlite */,
 				AFBD5AFA1EE5040000FAC796 /* HDJudgeInputTextStyle.h */,
 				AFBD5AFB1EE5040000FAC796 /* HDJudgeInputTextStyle.m */,
 				AF417DC11EE6379E00CCE219 /* UIView+HDUIViewCategory.h */,
@@ -609,16 +632,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF51DD2B1ED27E790018F2C6 /* AppDelegate.m in Sources */,
+				AF5CE79D1EE794F200C2E291 /* HDSqliteManager.m in Sources */,
 				AFBD5AFC1EE5040000FAC796 /* HDJudgeInputTextStyle.m in Sources */,
 				AF51DD691ED282A10018F2C6 /* HDNewsViewController.m in Sources */,
 				AF50A7A91ED3DB9B00F6F837 /* VerifyTools.m in Sources */,
 				AF417DCF1EE68AD500CCE219 /* HDTestTableViewEditingController.m in Sources */,
 				AF50A7A81ED3DB9B00F6F837 /* JSONKit.m in Sources */,
+				AF5CE7A01EE7A8BE00C2E291 /* HDUserInfoTable.m in Sources */,
 				AF50A7AD1ED3E11E00F6F837 /* HDNetworkingLearnController.m in Sources */,
 				AF50A7A71ED3DB9B00F6F837 /* GTMBase64.m in Sources */,
 				AF51DD631ED282530018F2C6 /* BaseViewController.m in Sources */,
 				AF51DD5B1ED27F6D0018F2C6 /* BaseTabBarController.m in Sources */,
 				AF51DD6C1ED282AC0018F2C6 /* HDFindViewController.m in Sources */,
+				AF5CE7A31EE7E33B00C2E291 /* HDSqlitePersoninfoViewController.m in Sources */,
 				AF51DD741ED2B4B20018F2C6 /* HDTestCollectionViewController.m in Sources */,
 				AF51DD771ED2B89D0018F2C6 /* HDTestCollectionViewCell.m in Sources */,
 				AFBD5AFF1EE508E100FAC796 /* HDTestTextfieldViewController.m in Sources */,
