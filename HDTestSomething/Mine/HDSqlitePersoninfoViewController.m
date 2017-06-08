@@ -9,7 +9,7 @@
 
 #import "HDSqlitePersoninfoViewController.h"
 #import "HDUserInfoTable.h"
-#import <MJRefresh.h>
+#import "MJRefresh.h"
 @interface HDSqlitePersoninfoViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) UITableView *baseTableView;
@@ -26,10 +26,19 @@
     [self addUsers];
     // Do any additional setup after loading the view.
 }
+#pragma mark - action method
+- (void)headRefreshData {
+    [self.dataSource removeAllObjects];
+    [self.baseTableView.mj_header beginRefreshing];
+    [self getStoreInfo];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.baseTableView.mj_header endRefreshing];
+    });
+}
 #pragma mark - 获取数据源信息
 - (void)getStoreInfo {
 //    self.dataSource = [HDUserInfoTable getAllUser];
-    [self.dataSource addObjectsFromArray: [[HDSqliteManager shareSqliteManager] executeQuery:[NSString stringWithFormat:@"select * from userRoom"]]];
+    [self.dataSource addObjectsFromArray: [[HDSqliteManager shareSqliteManager] executeQuery:[NSString stringWithFormat:@"select * from user"]]];
     [self.baseTableView reloadData];
 }
 #pragma mark - button action method
@@ -64,6 +73,7 @@
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
         [self.dataSource removeObjectAtIndex:indexPath.row];
         [HDUserInfoTable deleteUserStateId:[[[self.dataSource objectAtIndex:indexPath.row] objectForKey:@"userTargetId"] integerValue]];
+        [HDUserInfoTable deleteUser:[[self.dataSource objectAtIndex:indexPath.row] objectForKey:@"name"]];
         [self.baseTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }];
     deleteAction.backgroundColor = [UIColor redColor];
@@ -124,10 +134,20 @@
         _baseTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH)];
         _baseTableView.delegate = self;
         _baseTableView.dataSource = self;
+        _baseTableView.backgroundColor = KBackgroundColor;
         _baseTableView.showsVerticalScrollIndicator = NO;
         _baseTableView.showsHorizontalScrollIndicator = NO;
+        _baseTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headRefreshData)];
+        _baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
     }
     return _baseTableView;
+}
+- (NSMutableArray *)dataSource {
+    if (!_dataSource) {
+        _dataSource = [NSMutableArray array];
+    }
+    return _dataSource;
 }
 /*
 #pragma mark - Navigation
