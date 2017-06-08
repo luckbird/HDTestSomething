@@ -9,8 +9,9 @@
 
 #import "HDSqlitePersoninfoViewController.h"
 #import "HDUserInfoTable.h"
+#import <MJRefresh.h>
 @interface HDSqlitePersoninfoViewController ()<UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) UITableView *baseTableView;
 @end
 
@@ -23,13 +24,12 @@
     [HDUserInfoTable initData];
 //    [self addUser];
     [self addUsers];
-    
     // Do any additional setup after loading the view.
 }
 #pragma mark - 获取数据源信息
 - (void)getStoreInfo {
 //    self.dataSource = [HDUserInfoTable getAllUser];
-   self.dataSource = [[HDSqliteManager shareSqliteManager] executeQuery:[NSString stringWithFormat:@"select * from userRoom"]];
+    [self.dataSource addObjectsFromArray: [[HDSqliteManager shareSqliteManager] executeQuery:[NSString stringWithFormat:@"select * from userRoom"]]];
     [self.baseTableView reloadData];
 }
 #pragma mark - button action method
@@ -57,7 +57,23 @@
     }
     return cell;
 }
-
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+- (NSArray<UITableViewRowAction *>*)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        [self.dataSource removeObjectAtIndex:indexPath.row];
+        [HDUserInfoTable deleteUserStateId:[[[self.dataSource objectAtIndex:indexPath.row] objectForKey:@"userTargetId"] integerValue]];
+        [self.baseTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
+    deleteAction.backgroundColor = [UIColor redColor];
+    
+    UITableViewRowAction *addAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"增加" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        
+    }];
+    addAction.backgroundColor = [UIColor greenColor];
+    return @[deleteAction,addAction];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
