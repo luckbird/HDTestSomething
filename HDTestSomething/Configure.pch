@@ -18,6 +18,7 @@
 #import <UIKit/UIKit.h>
 #import "UIView+HDUIViewCategory.h"
 #import "HDSqliteManager.h"
+#import "UMMobClick/MobClick.h"
 #endif
 
 #ifdef DEBUG

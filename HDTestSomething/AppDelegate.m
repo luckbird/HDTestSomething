@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BaseTabBarController.h"
-
+#import "UMMobClick/MobClick.h"
 @interface AppDelegate ()
 
 @end
@@ -18,13 +18,29 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UMConfigInstance.appKey = @"593a5c4baed179119b0016fb";
+    UMConfigInstance.channelId = @"App Store";
+    UMConfigInstance.ePolicy = BATCH;
+    [MobClick startWithConfigure:UMConfigInstance];
+    
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [MobClick setAppVersion:version];
+    [MobClick setEncryptEnabled:YES];
+    [MobClick setCrashReportEnabled:NO];
+    [MobClick setLogEnabled:NO];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [BaseTabBarController shareTabBarController];
     [self.window makeKeyAndVisible];
+    [MobClick event:@"firstLaunch"];
     return YES;
 }
-
+-(void)umengEvent:(NSString *)eventId attributes:(NSDictionary *)attributes number:(NSNumber *)number{
+    NSString *numberKey = @"__ct__";
+    NSMutableDictionary *mutableDictionary = [NSMutableDictionary dictionaryWithDictionary:attributes];
+    [mutableDictionary setObject:[number stringValue] forKey:numberKey];
+    [MobClick event:eventId attributes:mutableDictionary];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

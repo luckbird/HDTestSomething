@@ -8,8 +8,6 @@
 
 #import "HDNewsViewController.h"
 #import "HDNetworkingLearnController.h"
-#import <SystemConfiguration/SystemConfiguration.h>
-#import <SystemConfiguration/CaptiveNetwork.h>
 @interface HDNewsViewController ()<NSURLConnectionDelegate>
 
 @end
@@ -21,20 +19,7 @@
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"网络" style:UIBarButtonItemStylePlain target:self action:@selector(enterNetworkingInterface)];
     // Do any additional setup after loading the view.
         [super viewDidLoad];
-    
-        CFArrayRef arrayRef = CNCopySupportedInterfaces();
-        NSArray *interfaces = (__bridge NSArray *)arrayRef;
-        NSLog(@"interfaces -> %@", interfaces);
-        
-        for (NSString *interfaceName in interfaces) {
-            CFDictionaryRef dictRef = CNCopyCurrentNetworkInfo((CFStringRef)interfaceName);
-            if (dictRef != NULL) {
-                NSDictionary *networkInfo = (__bridge NSDictionary *)dictRef;
-                NSLog(@"network info -> %@", networkInfo);
-                CFRelease(dictRef);
-            }
-        }
-        CFRelease(arrayRef);
+    [MobClick event:@"firstLaunch"];
 
 }
 - (void)viewWillAppear:(BOOL)animated {
