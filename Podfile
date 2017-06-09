@@ -4,4 +4,5 @@ pod 'MJRefresh'
 pod 'SDWebImage'
 pod 'Masonry'
 pod 'AFNetworking'
+pod 'UMengAnalytics'
 end
