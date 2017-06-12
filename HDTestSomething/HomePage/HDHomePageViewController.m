@@ -43,6 +43,7 @@ static NSString *HDHomePageCellID = @"HDHomePageViewCellID";
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [MobClick event:@"test_function_codeA"];
     self.hidesBottomBarWhenPushed = YES;
     HDTestCollectionViewController *vc = [HDTestCollectionViewController new];
     [self.navigationController pushViewController:vc animated:YES];

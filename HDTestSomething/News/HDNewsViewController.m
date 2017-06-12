@@ -19,7 +19,6 @@
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"网络" style:UIBarButtonItemStylePlain target:self action:@selector(enterNetworkingInterface)];
     // Do any additional setup after loading the view.
         [super viewDidLoad];
-    [MobClick event:@"firstLaunch"];
 
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -28,6 +27,7 @@
 //    [self learnURLLoading];
 //    [self sendCM003];
 //    [self sendPM038];
+    [MobClick event:@"enterNewsInfo"];
 }
 - (void)sendCM003 {
     NSMutableDictionary *dataDic = [NSMutableDictionary dictionary];

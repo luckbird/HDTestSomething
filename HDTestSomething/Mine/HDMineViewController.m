@@ -83,6 +83,7 @@ double t(double last, char* key){
 }
 #pragma mark - action method
 - (void)enterMarqueeVc {
+    [MobClick event:@"test_AddSomething"];
     HDTestmarqueeViewController *vc = [HDTestmarqueeViewController new];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];

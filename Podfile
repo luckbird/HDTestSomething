@@ -5,4 +5,6 @@ pod 'SDWebImage'
 pod 'Masonry'
 pod 'AFNetworking'
 pod 'UMengAnalytics'
+pod 'UMengUShare/UI'
+pod 'UMengUShare/Social/WeChat'
 end

@@ -26,8 +26,10 @@
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [MobClick setAppVersion:version];
     [MobClick setEncryptEnabled:YES];
-    [MobClick setCrashReportEnabled:NO];
-    [MobClick setLogEnabled:NO];
+    [MobClick setCrashReportEnabled:YES];
+    [MobClick setLogEnabled:YES];
+    
+    [self umlogInfo];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [BaseTabBarController shareTabBarController];
@@ -35,11 +37,18 @@
     [MobClick event:@"firstLaunch"];
     return YES;
 }
--(void)umengEvent:(NSString *)eventId attributes:(NSDictionary *)attributes number:(NSNumber *)number{
-    NSString *numberKey = @"__ct__";
-    NSMutableDictionary *mutableDictionary = [NSMutableDictionary dictionaryWithDictionary:attributes];
-    [mutableDictionary setObject:[number stringValue] forKey:numberKey];
-    [MobClick event:eventId attributes:mutableDictionary];
+- (void)umlogInfo {
+    Class cls = NSClassFromString(@"UMANUtil");
+    SEL deviceIDSelector = @selector(openUDIDString);
+    NSString *deviceID = nil;
+    if(cls && [cls respondsToSelector:deviceIDSelector]){
+        deviceID = [cls performSelector:deviceIDSelector];
+    }
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:@{@"oid" : deviceID}
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:nil];
+    
+    NSLog(@"%@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
